@@ -1,25 +1,27 @@
 package com.bridgelabz;
 
 public class EmployeeWage {
-
+	static final int Full_Time= 1;
+	static final int Part_Time= 2;
+	static final int Wage_Per_Hrs =20;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 	     System.out.println("Welcome Employee Wage Computation Program");
 	
-  		int Full_time = 1;
-  		int Part_time = 2;
-  		
-  		int wage_Per_Hrs=20;
   		int empHrs = 0;
   		//int empWage = 0;
  
         int empCheck = (int)Math.floor(Math.random() *10) % 3;
-        if ( empCheck == Full_time )
+        switch (empCheck) {
+        case Full_Time :
                 empHrs=8;
-        else if (empCheck == Part_time )
+                break;
+        case Part_Time :
         		empHrs=4;
-        int empWage = empHrs * wage_Per_Hrs;
+        		break;
+        }		
+        int empWage = empHrs * Wage_Per_Hrs;
         System.out.println("Emp Wage : " +empWage);
 
 	}
